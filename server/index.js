@@ -28,11 +28,47 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-
+// Danh sách các phòng đang tồn tại
+const rooms = {};
 
 // Socket.io event listener
 io.on('connection', (socket) => {
   console.log('A user connected');
+
+  // Người dùng yêu cầu tạo phòng mới
+  socket.on('createRoom', (roomName) => {
+    // Kiểm tra xem phòng đã tồn tại hay chưa
+    if (!rooms[roomName]) {
+      // Tạo phòng mới và lưu vào danh sách các phòng
+      socket.join(roomName);
+      rooms[roomName] = [socket.id];
+      console.log(`[${socket.id}] created room ${roomName}`);
+      // Gửi thông báo tới người dùng rằng phòng đã được tạo
+      socket.emit('roomCreated', roomName);
+    } else {
+      // Phòng đã tồn tại, gửi thông báo lỗi tới người dùng
+      socket.emit('roomExists', roomName);
+    }
+  });
+
+  // Gửi danh sách các phòng đang tồn tại về client
+  socket.emit('roomList', Object.keys(rooms));
+
+  // Người dùng yêu cầu tham gia vào một phòng đã tồn tại
+  socket.on('joinRoom', (roomName) => {
+    // Kiểm tra xem phòng đã tồn tại hay chưa
+    if (rooms[roomName]) {
+      // Tham gia vào phòng và lưu thông tin người dùng vào danh sách
+      socket.join(roomName);
+      rooms[roomName].push(socket.id);
+      console.log(`[${socket.id}] joined room ${roomName}`);
+      // Gửi thông báo tới tất cả người dùng trong phòng rằng có người mới tham gia vào
+      io.to(roomName).emit('userJoined', socket.id);
+    } else {
+      // Phòng không tồn tại, gửi thông báo lỗi tới người dùng
+      socket.emit('roomNotFound', roomName);
+    }
+  });
 
   // Shuffle cards and emit to client
   socket.on('shuffleCards', () => {
@@ -53,7 +89,10 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('A user disconnected');
   });
+
 });
+
+
 
 // Start server
 const port = process.env.PORT || 3000;

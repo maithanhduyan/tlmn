@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TLMN Game</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h1>TLMN Game</h1>
+    <button id="shuffle-btn">Shuffle Cards</button>
+    <ul id="card-list"></ul>
+    <hr>
+    <form id="create-room-form">
+        <label for="room-name">Room Name:</label>
+        <input type="text" id="room-name" name="room-name">
+        <button type="submit">Create Room</button>
+    </form>
+    <h2>Room List</h2>
+    <ul id="room-list"></ul>
+    <script>
+        const socket = io();
+        const shuffleBtn = document.getElementById('shuffle-btn');
+        const cardList = document.getElementById('card-list');
+        const roomList = document.getElementById('room-list');
+        const createRoomForm = document.getElementById('create-room-form');
+        const roomNameInput = document.getElementById('room-name');
+
+        shuffleBtn.addEventListener('click', () => {
+            socket.emit('shuffleCards');
+        });
+
+        socket.on('cardsShuffled', (cards) => {
+            cardList.innerHTML = '';
+            for (let card of cards) {
+                const li = document.createElement('li');
+                li.textContent = card;
+                cardList.appendChild(li);
+            }
+        });
+
+        socket.on('createRoom', (cards) => {
+            cardList.innerHTML = '';
+            for (let card of cards) {
+                const li = document.createElement('li');
+                li.textContent = card;
+                cardList.appendChild(li);
+            }
+        });
+
+        createRoomForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const roomName = roomNameInput.value;
+            if (roomName) {
+                socket.emit('createRoom', roomName);
+                roomNameInput.value = '';
+            }
+        });
+
+        socket.on('roomCreated', (roomName) => {
+            console.log(`Room created: ${roomName}`);
+        });
+
+        socket.on('roomExists', (roomName) => {
+            alert(`Room "${roomName}" already exists!`);
+        });
+
+        socket.on('roomNotFound', (roomName) => {
+            alert(`Room "${roomName}" not found!`);
+        });
+
+        socket.on('userJoined', (userId) => {
+            console.log(`User joined: ${userId}`);
+        });
+
+        socket.on('roomList', (rooms) => {
+            roomList.innerHTML = '';
+            for (let roomName in rooms) {
+                const li = document.createElement('li');
+                li.textContent = roomName;
+                roomList.appendChild(li);
+            }
+        });
+
+        socket.emit('getRoomList');
+    </script>
+</body>
+</html>
