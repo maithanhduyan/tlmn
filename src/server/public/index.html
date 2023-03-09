@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TLMN Game</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h1>TLMN Game</h1>
+    <button id="shuffle-btn">Shuffle Cards</button>
+    <ul id="card-list"></ul>
+
+    <script>
+        const socket = io();
+        const shuffleBtn = document.getElementById('shuffle-btn');
+        const cardList = document.getElementById('card-list');
+
+        shuffleBtn.addEventListener('click', () => {
+            socket.emit('shuffleCards');
+        });
+
+        socket.on('cardsShuffled', (cards) => {
+            cardList.innerHTML = '';
+            for (let card of cards) {
+                const li = document.createElement('li');
+                li.textContent = card;
+                cardList.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>
