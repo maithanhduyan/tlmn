@@ -3,7 +3,15 @@ const http = require('http');
 const socketIo = require('socket.io');
 const path = require('path');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const userRoutes = require('./modules/user/routes/userRoutes');
+
 const app = express();
+app.use(express.json());
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 const server = http.createServer(app);
 const io = socketIo(server);
 
@@ -17,6 +25,9 @@ function shuffle(cards) {
 }
 // Allow all origins
 // app.use(cors());
+
+// Routes
+app.use('/users', userRoutes);
 
 // Route to serve client-side code
 // app.use(express.static('public'));
