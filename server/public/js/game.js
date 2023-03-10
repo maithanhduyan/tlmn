@@ -23,27 +23,32 @@ function create ()
     //  Create a stack of random cards
     var frames = this.textures.get('cards').getFrameNames();
 
-    var x = 100;
-    var y = 100;
+
+    var center_desk ={
+        width : game.config.width/2,
+        height: game.config.height/2
+    }
 
     for (var i = 0; i < 64; i++)
     {
-        this.add.image(x, y, 'cards', Phaser.Math.RND.pick(frames)).setInteractive();
+        var image = this.add.image(center_desk.width, center_desk.height, 'cards', Phaser.Math.RND.pick(frames)).setInteractive().setScale(0.8);
+        this.input.setDraggable(image);
 
-        x += 4;
-        y += 4;
+        center_desk.width += 0.1;
+        center_desk.height += 0.1;
     }
 
-    this.input.on('gameobjectdown', function (pointer, gameObject) {
-
-        //  Will contain the top-most Game Object (in the display list)
-        this.tweens.add({
-            targets: gameObject,
-            x: { value: 1100, duration: 1500, ease: 'Power2' },
-            y: { value: 500, duration: 500, ease: 'Bounce.easeOut', delay: 150 }
-        });
-
+    this.input.on('dragstart', function (pointer, gameObject) {
+        this.children.bringToTop(gameObject);
     }, this);
+
+    this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
+
+        gameObject.x = dragX;
+        gameObject.y = dragY;
+
+    });
+   
 }
 
 function update (){
