@@ -35,7 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-
+// Định nghĩa router cho trang chủ
+app.get('/game', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/game.html'));
+});
 // Khởi tạo đối tượng từ class UserRouter
 const userRouter = new UserRouter();
 
