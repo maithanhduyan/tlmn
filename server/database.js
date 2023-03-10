@@ -31,4 +31,4 @@ const connection_pool = mysql.createPool({
     queueLimit: 0,
   });
 
-module.exports = connection;
+module.exports = connection_pool;

@@ -4,7 +4,7 @@ const socketIo = require('socket.io');
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const userRoutes = require('./modules/user/routes/userRoutes');
+const UserRouter = require('./modules/user/userRouter');
 
 const app = express();
 app.use(express.json());
@@ -23,21 +23,25 @@ function shuffle(cards) {
   }
   return cards;
 }
+
 // Allow all origins
 // app.use(cors());
 
-// Routes
-app.use('/users', userRoutes);
-
-// Route to serve client-side code
-// app.use(express.static('public'));
 // Sử dụng thư mục 'public' để chứa các tài nguyên của trang web
 app.use(express.static(path.join(__dirname, 'public')));
 
+//-------------------------------------------------------
 // Định nghĩa router cho trang chủ
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
+
+// Khởi tạo đối tượng từ class UserRouter
+const userRouter = new UserRouter();
+
+// Đăng ký Router vào ứng dụng
+app.use('/users', userRouter.router);
+//-------------------------------------------------------
 
 // Danh sách các phòng đang tồn tại
 const rooms = {};
@@ -110,3 +114,5 @@ const port = process.env.PORT || 3000;
 server.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+module.exports = app;
