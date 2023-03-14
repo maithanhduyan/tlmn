@@ -1,6 +1,6 @@
-const UserRepository = require('../repositories/userRepository');
+const UserRepository = require("../repositories/userRepository");
 
-module.exports =  class UserService {
+module.exports = class UserService {
   constructor() {
     this.userRepository = new UserRepository();
   }
@@ -9,13 +9,13 @@ module.exports =  class UserService {
     // Validate user data before creating a new user
     const { email, password } = userData;
     if (!email || !password) {
-      throw new Error('Email and password are required!');
+      throw new Error("Email and password are required!");
     }
 
     // Check if user with the same email already exists
     const existingUser = await this.userRepository.findByEmail(email);
     if (existingUser) {
-      throw new Error('User with this email already exists!');
+      throw new Error("User with this email already exists!");
     }
 
     // Create and save new user
@@ -28,7 +28,7 @@ module.exports =  class UserService {
     const user = await this.userRepository.findById(userId);
 
     if (!user) {
-      throw new Error('User not found!');
+      throw new Error("User not found!");
     }
 
     return user;
@@ -38,17 +38,20 @@ module.exports =  class UserService {
     // Validate updated user data
     const { email, password } = updatedUserData;
     if (!email || !password) {
-      throw new Error('Email and password are required!');
+      throw new Error("Email and password are required!");
     }
 
     // Check if user with the same email already exists
     const existingUser = await this.userRepository.findByEmail(email);
     if (existingUser && existingUser._id.toString() !== userId) {
-      throw new Error('User with this email already exists!');
+      throw new Error("User with this email already exists!");
     }
 
     // Update user and return updated user data
-    const updatedUser = await this.userRepository.updateUser(userId, updatedUserData);
+    const updatedUser = await this.userRepository.updateUser(
+      userId,
+      updatedUserData
+    );
 
     return updatedUser;
   }
@@ -57,7 +60,7 @@ module.exports =  class UserService {
     // Check if user exists
     const user = await this.userRepository.findById(userId);
     if (!user) {
-      throw new Error('User not found!');
+      throw new Error("User not found!");
     }
 
     // Delete user and return deleted user data
@@ -70,7 +73,7 @@ module.exports =  class UserService {
     const user = await this.userRepository.findByEmail(email);
 
     if (!user) {
-      throw new Error('User not found!');
+      throw new Error("User not found!");
     }
 
     return user;
@@ -80,10 +83,9 @@ module.exports =  class UserService {
     const user = await this.userRepository.findByUsername(username);
 
     if (!user) {
-      throw new Error('User not found!');
+      throw new Error("User not found!");
     }
 
     return user;
   }
-}
-
+};

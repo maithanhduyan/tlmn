@@ -5,6 +5,7 @@ const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const UserRouter = require('./modules/user/userRouter');
+const RandomUtil = require('./modules/utils/randomUtil');
 
 const app = express();
 app.use(express.json());
@@ -25,7 +26,7 @@ function shuffle(cards) {
 }
 
 // Allow all origins
-// app.use(cors());
+ app.use(cors());
 
 // Sử dụng thư mục 'public' để chứa các tài nguyên của trang web
 app.use(express.static(path.join(__dirname, 'public')));
@@ -61,8 +62,9 @@ io.on('connection', (socket) => {
       socket.join(roomName);
       rooms[roomName] = [socket.id];
       console.log(`[${socket.id}] created room ${roomName}`);
+      console.log(`[${socket.id}] created room `+ new RandomUtil(10).generate());
       // Gửi thông báo tới người dùng rằng phòng đã được tạo
-      socket.emit('roomCreated', roomName);
+      socket.emit('roomCreated', roomName + new RandomUtil(10).generate());
     } else {
       // Phòng đã tồn tại, gửi thông báo lỗi tới người dùng
       socket.emit('roomExists', roomName);
@@ -96,7 +98,7 @@ io.on('connection', (socket) => {
     console.log('Shuffling Cards ...');
     for (let suit of suits) {
       for (let rank of ranks) {
-        cards.push(`${rank} ${suit}`);
+        cards.push(`${rank}${suit}`);
       }
     }
     cards = shuffle(cards);

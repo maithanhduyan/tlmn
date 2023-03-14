@@ -6,7 +6,11 @@ class UserRepository {
   }
 
   async createUser(user) {
-    const { name, email, password } = user;
+    const {
+      name,
+      email,
+      password
+    } = user;
     const newUser = new User(name, email, password);
 
     const result = await this.db.query(
@@ -28,7 +32,11 @@ class UserRepository {
       return null;
     }
 
-    const { name, email, password } = result.rows[0];
+    const {
+      name,
+      email,
+      password
+    } = result.rows[0];
     const user = new User(name, email, password);
     user.id = id;
 
@@ -45,7 +53,11 @@ class UserRepository {
       return null;
     }
 
-    const { id, name, password } = result.rows[0];
+    const {
+      id,
+      name,
+      password
+    } = result.rows[0];
     const user = new User(name, email, password);
     user.id = id;
 
@@ -53,7 +65,11 @@ class UserRepository {
   }
 
   async updateUser(id, newData) {
-    const { name, email, password } = newData;
+    const {
+      name,
+      email,
+      password
+    } = newData;
 
     await this.db.query(
       "UPDATE user SET name = $1, email = $2, password = $3 WHERE id = $4",

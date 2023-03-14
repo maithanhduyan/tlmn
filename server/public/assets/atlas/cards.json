@@ -1,16 +1,6 @@
 {"frames": [
-
 {
-	"filename": "back",
-	"frame": {"x":2,"y":2,"w":140,"h":190},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":190},
-	"sourceSize": {"w":140,"h":190},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "clubs10",
+	"filename": "10Chuồn",
 	"frame": {"x":2,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -19,7 +9,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubs2",
+	"filename": "2Chuồn",
 	"frame": {"x":2,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -28,7 +18,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubs3",
+	"filename": "3Chuồn",
 	"frame": {"x":2,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -37,7 +27,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubs4",
+	"filename": "4Chuồn",
 	"frame": {"x":2,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -46,7 +36,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubs5",
+	"filename": "5Chuồn",
 	"frame": {"x":144,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -55,7 +45,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubs6",
+	"filename": "6Chuồn",
 	"frame": {"x":144,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -64,7 +54,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubs7",
+	"filename": "7Chuồn",
 	"frame": {"x":144,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -73,7 +63,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubs8",
+	"filename": "8Chuồn",
 	"frame": {"x":144,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -82,7 +72,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubs9",
+	"filename": "9Chuồn",
 	"frame": {"x":144,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -91,7 +81,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubsAce",
+	"filename": "AChuồn",
 	"frame": {"x":286,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -100,7 +90,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubsJack",
+	"filename": "JChuồn",
 	"frame": {"x":286,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -109,7 +99,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubsKing",
+	"filename": "KChuồn",
 	"frame": {"x":286,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -118,7 +108,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "clubsQueen",
+	"filename": "QChuồn",
 	"frame": {"x":286,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -127,7 +117,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds10",
+	"filename": "10Rô",
 	"frame": {"x":286,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -136,7 +126,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds2",
+	"filename": "2Rô",
 	"frame": {"x":428,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -145,7 +135,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds3",
+	"filename": "3Rô",
 	"frame": {"x":428,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -154,7 +144,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds4",
+	"filename": "4Rô",
 	"frame": {"x":428,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -163,7 +153,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds5",
+	"filename": "5Rô",
 	"frame": {"x":428,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -172,7 +162,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds6",
+	"filename": "6Rô",
 	"frame": {"x":428,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -181,7 +171,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds7",
+	"filename": "7Rô",
 	"frame": {"x":570,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -190,7 +180,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds8",
+	"filename": "8Rô",
 	"frame": {"x":570,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -199,7 +189,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamonds9",
+	"filename": "9Rô",
 	"frame": {"x":570,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -208,7 +198,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamondsAce",
+	"filename": "ARô",
 	"frame": {"x":570,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -217,7 +207,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamondsJack",
+	"filename": "JRô",
 	"frame": {"x":570,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -226,7 +216,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamondsKing",
+	"filename": "KRô",
 	"frame": {"x":712,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -235,7 +225,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "diamondsQueen",
+	"filename": "QRô",
 	"frame": {"x":854,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -244,7 +234,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts10",
+	"filename": "10Cơ",
 	"frame": {"x":996,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -253,7 +243,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts2",
+	"filename": "2Cơ",
 	"frame": {"x":1138,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -262,7 +252,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts3",
+	"filename": "3Cơ",
 	"frame": {"x":1280,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -271,7 +261,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts4",
+	"filename": "4Cơ",
 	"frame": {"x":1422,"y":2,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -280,7 +270,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts5",
+	"filename": "5Cơ",
 	"frame": {"x":712,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -289,7 +279,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts6",
+	"filename": "6Cơ",
 	"frame": {"x":712,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -298,7 +288,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts7",
+	"filename": "7Cơ",
 	"frame": {"x":712,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -307,7 +297,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts8",
+	"filename": "8Cơ",
 	"frame": {"x":712,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -316,7 +306,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "hearts9",
+	"filename": "9Cơ",
 	"frame": {"x":854,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -325,7 +315,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "heartsAce",
+	"filename": "ACơ",
 	"frame": {"x":854,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -334,7 +324,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "heartsJack",
+	"filename": "JCơ",
 	"frame": {"x":854,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -343,7 +333,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "heartsKing",
+	"filename": "KCơ",
 	"frame": {"x":854,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -352,7 +342,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "heartsQueen",
+	"filename": "QCơ",
 	"frame": {"x":996,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -361,16 +351,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "joker",
-	"frame": {"x":1138,"y":194,"w":140,"h":190},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":190},
-	"sourceSize": {"w":140,"h":190},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "spades10",
+	"filename": "10Bích",
 	"frame": {"x":1280,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -379,7 +360,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spades2",
+	"filename": "2Bích",
 	"frame": {"x":1422,"y":194,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -388,7 +369,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spades3",
+	"filename": "3Bích",
 	"frame": {"x":996,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -397,7 +378,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spades4",
+	"filename": "4Bích",
 	"frame": {"x":996,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -406,7 +387,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spades5",
+	"filename": "5Bích",
 	"frame": {"x":996,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -415,7 +396,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spades6",
+	"filename": "6Bích",
 	"frame": {"x":1138,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -424,7 +405,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spades7",
+	"filename": "7Bích",
 	"frame": {"x":1280,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -433,7 +414,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spades8",
+	"filename": "8Bích",
 	"frame": {"x":1422,"y":386,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -442,7 +423,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spades9",
+	"filename": "9Bích",
 	"frame": {"x":1138,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -451,7 +432,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spadesAce",
+	"filename": "ABích",
 	"frame": {"x":1138,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -460,7 +441,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spadesJack",
+	"filename": "JBích",
 	"frame": {"x":1280,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -469,7 +450,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spadesKing",
+	"filename": "KBích",
 	"frame": {"x":1280,"y":770,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
@@ -478,14 +459,16 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "spadesQueen",
+	"filename": "QBích",
 	"frame": {"x":1422,"y":578,"w":140,"h":190},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":190},
 	"sourceSize": {"w":140,"h":190},
 	"pivot": {"x":0.5,"y":0.5}
-}],
+}
+
+],
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker",
 	"version": "1.0",

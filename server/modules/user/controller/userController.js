@@ -4,7 +4,7 @@ module.exports = class UserController {
   constructor() {
     this.userService = new UserService();
   }
-   async register(req, res, next) {
+  async register(req, res, next) {
     try {
       const user = await this.userService.createUser(req.body);
       res.status(201).json(user);
@@ -12,5 +12,4 @@ module.exports = class UserController {
       next(err);
     }
   }
-
-}
+};
