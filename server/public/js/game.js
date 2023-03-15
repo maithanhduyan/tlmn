@@ -31,10 +31,8 @@ class Desk extends Phaser.Scene {
             center_desk.width += 0.1;
             center_desk.height += 0.1;
             deck[i] = card;
-            console.log(card.frame.name);
             // Sự kiện click chuột trên lá bài
             card.on('pointerdown', (pointer) => {
-                socket.emit('shuffleCards');
                 console.log('Selected card:', card.frame.name);
             });
         }

@@ -46,6 +46,64 @@ const userRouter = new UserRouter();
 // Đăng ký Router vào ứng dụng
 app.use('/users', userRouter.router);
 //-------------------------------------------------------
+class Card {
+  constructor(rank, suit) {
+    this.rank = rank;
+    this.suit = suit;
+  }
+}
+class Deck {
+  constructor() {
+    this.suits = ['Cơ', 'Rô', 'Chuồn', 'Bích'];
+    this.ranks = ['3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A', '2'];
+    this.cards = [];
+    for (let suit of this.suits) {
+      for (let rank of this.ranks) {
+        this.cards.push(new Card(rank, suit));
+      }
+    }
+    this.shuffle();
+  }
+
+  shuffle() {
+    for (let i = this.cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
+    }
+  }
+
+  dealCard() {
+    return this.cards.pop();
+  }
+}
+
+class Player {
+  constructor(id, name) {
+    this.id = id;
+    this.name = name;
+    this.hand = [];
+  }
+
+  addCard(card) {
+    this.hand.push(card);
+  }
+
+  removeCard(index) {
+    return this.hand.splice(index, 1)[0];
+  }
+
+  getHand() {
+    return this.hand;
+  }
+
+  getCard(index) {
+    return this.hand[index];
+  }
+
+  getNumCards() {
+    return this.hand.length;
+  }
+}
 
 // Danh sách các phòng đang tồn tại
 const rooms = {};
@@ -92,16 +150,13 @@ io.on('connection', (socket) => {
 
   // Shuffle cards and emit to client
   socket.on('shuffleCards', () => {
-    const suits = ['Cơ', 'Rô', 'Chuồn', 'Bích'];
-    const ranks = ['3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A', '2'];
+    const desk = new Deck();
+    console.log(desk.dealCard());
     let cards = [];
     console.log('Shuffling Cards ...');
-    for (let suit of suits) {
-      for (let rank of ranks) {
-        cards.push(`${rank}${suit}`);
-      }
+    for (let i = 0; i < 13; i++) {
+      cards[i] = desk.dealCard();
     }
-    cards = shuffle(cards);
     socket.emit('cardsShuffled', cards);
   });
 
@@ -111,6 +166,9 @@ io.on('connection', (socket) => {
   });
 
 });
+
+
+
 
 
 
